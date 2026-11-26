@@ -1,0 +1,11 @@
+# References
+
+1. Koichi Yamamoto. “On the Diophantine equation $4/n=1/x+1/y+1/z$.” *Memoirs of the Faculty of Science, Kyushu University, Series A* **19** (1965), 37–47. Theorem 1 characterizes solvability for odd prime inputs by a union of congruence classes. Theorem 2 uses quadratic characters to show that this union excludes perfect squares. [Publisher’s article](https://doi.org/10.2206/kyushumfs.19.37)
+
+2. Christian Elsholtz and Terence Tao. “Counting the number of solutions to the Erdős–Straus equation on unit fractions.” *Journal of the Australian Mathematical Society* **94** (2013), 50–105. Proposition 1.6 shows that both of the authors’ solution counts, Type I and Type II, vanish at every odd square. The present note considers all decompositions with a prescribed first denominator. [Journal article](https://doi.org/10.1017/S1446788712000468)
+
+3. Paul Erdős. “Számelméleti megjegyzések, I.” [Remarks on number theory, I]. *Matematikai Lapok* **12** (1961), 10–17. Equation (7) on p. 12 gives the relative density $2^{-k}$ of primes whose least quadratic nonresidue is the $k$-th prime. This is the classical precedent for the geometric weights in the first-shift distribution. [Rényi Institute scan](https://www.renyi.hu/~p_erdos/1961-23.pdf#page=3)
+
+4. D. R. Heath-Brown. “Zero-free regions for Dirichlet $L$-functions, and the least prime in an arithmetic progression.” *Proceedings of the London Mathematical Society*, Series 3, **64** (1992), 265–338. Corollary 5 of the present note uses Linnik’s bound in the form $p\le C D^A$ for the least prime in a reduced residue class modulo $D$. This gives a logarithmic lower bound for the first-denominator gap along a sequence of prime squares. [Journal article](https://doi.org/10.1112/plms/s3-64.2.265)
+
+5. Benjamin Dahan. “Sieve dimension and search depth for the Erdős-Straus conjecture, $n\equiv1\pmod{24}$.” Preprint, arXiv:2608.24035v2, 5 November 2026. Dahan studies prime inputs and proves that both branches of a divisor criterion fail at the fixed shift $7$ for infinitely many such primes. This provides a comparison with the search-depth question for prime squares. [Version 2 on arXiv](https://arxiv.org/abs/2608.24035v2)

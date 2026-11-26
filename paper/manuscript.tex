@@ -1,0 +1,361 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdfauthor={Qichao Liu},pdftitle={The least denominator offset in the Erdos-Straus equation on prime squares}}
+\urlstyle{same}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+\newcommand{\jac}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\ES}{Erd\H{o}s--Straus}
+
+\title{The least denominator offset in the \ES{} equation on prime squares}
+\author{Qichao Liu}
+\date{26 November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For an odd prime \(p\), let \(T(p)\) be the least value of \(4x-p^2\)
+among the ordered representations \(4/p^2=1/x+1/y+1/z\) with
+\(x\le y\le z\). We determine the limiting distribution of \(T(p)\) over
+the primes. Its atoms, in increasing order, are the primes congruent to
+\(3\bmod 4\) and the integers \(3q\) with \(q\) prime and congruent to
+\(1\bmod 4\). The \(j\)-th atom has mass \(2^{-j}\). For each fixed
+offset, a Jacobi symbol gives a necessary condition that is sufficient
+for a set of relative density one in each admissible residue class.
+For every prime offset \(r\equiv3\bmod4\), we also construct an
+arithmetic progression on which an explicit representation attains
+\(T(p)=r\).
+\end{abstract}
+
+\noindent\textit{Keywords.} Unit fractions, \ES{} equation, prime squares,
+quadratic reciprocity, relative natural density.
+
+\section{The question and the main theorem}
+
+The \ES{} conjecture asserts that for every integer \(n\ge2\) there are
+positive integers \(x\le y\le z\) satisfying
+\[
+  \frac4n=\frac1x+\frac1y+\frac1z.
+\]
+Since \(1/x<4/n\), the smallest denominator must exceed \(n/4\).
+For \(n=p^2\) with \(p\) an odd prime, the possible positive offsets
+\(t=4x-p^2\) are \(3,7,11,15,\ldots\).
+Call \(t\) \emph{feasible} for \(p\) if \(x=(p^2+t)/4\) is the smallest
+denominator in such a representation. Write \(T(p)\) for the first
+feasible offset and set \(T(p)=\infty\) if there is no representation.
+For a set \(S\) of odd primes, its relative natural density is
+\[
+  \delta(S)=\lim_{X\to\infty}
+  \frac{\#\{p\in S:p\le X\}}{\#\{p\le X:p\text{ is an odd prime}\}},
+\]
+when the limit exists.
+
+\begin{theorem}\label{thm:law}
+List the members of
+\[
+  \{q:q\ \text{prime},\ q\equiv3\pmod4\}
+  \ \cup\
+  \{3q:q\ \text{prime},\ q\equiv1\pmod4\}
+\]
+in increasing order as \(u_1,u_2,\ldots\).
+For every \(j\ge1\),
+\(\delta(\{p:T(p)=u_j\})=2^{-j}\).
+Every other finite value has density zero, and so does \(T(p)=\infty\).
+\end{theorem}
+
+For example, \(3,7,11,15\) have masses \(1/2,1/4,1/8,1/16\),
+respectively. The offset \(27\) has mass zero because its quadratic
+character already occurs at \(3\). The table gives the counts for the
+\(1{,}217\) primes in \(41\le p<10{,}000\). For each prime we applied
+Lemma~\ref{lem:div} to successive offsets through \(31\). The last
+column counts primes for which every tested offset failed.
+
+\begin{center}
+\small
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+First offset & 3 & 7 & 11 & 15 & 19 & 23 & 27 & 31 & \(>31\)\\
+\midrule
+Number of primes & 611 & 309 & 154 & 76 & 31 & 24 & 0 & 9 & 3\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{A local criterion at a fixed offset}
+
+Fix \(t>0\) with \(t\equiv3\bmod4\). Throughout this section
+\(p\nmid t\) and \(p^2>t\), conditions which exclude only finitely
+many primes for fixed \(t\). Put
+\[
+  x=\frac{p^2+t}{4},\qquad M=p^2x.
+\]
+Then \(\gcd(M,t)=1\), since \(4x\equiv p^2\bmod t\).
+After the term \(1/x\) has been removed, the remaining fraction is
+\(t/M\).
+
+\begin{lemma}\label{lem:div}
+The offset \(t\) is feasible if and only if \(M^2\) has a positive
+divisor \(d\equiv-M\pmod t\).
+\end{lemma}
+
+\begin{proof}
+The identity \(t/M=1/y+1/z\) gives
+\[
+  (ty-M)(tz-M)=M^2.
+\]
+Both factors are positive since \(y,z>M/t\). Conversely, if \(d\)
+is as stated, put \(e=M^2/d\). As \(M\) is invertible modulo \(t\),
+we have \(e\equiv-M\bmod t\). Thus
+\[
+  y=(M+d)/t,\qquad z=(M+e)/t
+\]
+are positive integers satisfying the identity. Both exceed
+\(M/t=xp^2/t>x\), so we may order them to obtain the asserted
+representation.
+\end{proof}
+
+Write \(\chi_t(v)=\jac{v}{t}\) for the Jacobi symbol.
+
+\begin{proposition}\label{prop:fixed}
+If \(t\) is feasible, then \(\chi_t(p)=-1\). Conversely, for each
+invertible residue class \(a\bmod t\) satisfying \(\chi_t(a)=-1\),
+the proportion of primes in that class for which \(t\) is feasible
+tends to one.
+\end{proposition}
+
+\begin{proof}
+Let \(q\) be an odd prime dividing \(x\). Then
+\(p^2\equiv-t\bmod q\), and \(q\) is coprime to \(pt\).
+Quadratic reciprocity and \(t\equiv3\bmod4\) give
+\[
+  \jac{q}{t}=\jac{-t}{q}=1.
+\]
+If \(2\mid x\), then \(t=4x-p^2\equiv7\bmod8\), so
+\(\chi_t(2)=1\) as well. Every prime factor of \(x\) has character
+\(+1\). If \(\chi_t(p)=1\), the same holds for every divisor of
+\(M^2\), whereas \(\chi_t(-M)=-1\) since \(\chi_t(-1)=-1\).
+Lemma~\ref{lem:div} rules out feasibility.
+
+For the converse, fix \(a\) with \(\chi_t(a)=-1\) and define
+\(b\bmod t\) by \(4b\equiv-a^3\bmod t\). Then \(b\) is invertible
+and \(\chi_t(b)=1\). For every sufficiently large prime
+\(q\equiv b\bmod t\), quadratic reciprocity yields
+\(\jac{-t}{q}=\jac{q}{t}=1\). The congruence \(p^2\equiv-t\bmod q\)
+therefore has two distinct nonzero roots modulo \(q\).
+If \(p\equiv a\bmod t\) belongs to either class, then \(q\mid x\).
+In that case \(d=pq\) divides \(M^2\), and
+\[
+  4d\equiv4ab\equiv-a^4\equiv-4M\pmod t .
+\]
+Thus \(t\) is feasible by Lemma~\ref{lem:div}.
+
+For a fixed finite set \(S\) of these auxiliary primes \(q\), the
+Chinese remainder theorem and the prime number theorem for arithmetic
+progressions give
+\[
+  \prod_{q\in S}\left(1-\frac{2}{q-1}\right)
+\]
+as the limiting proportion, among primes \(p\equiv a\bmod t\), that
+avoid both roots for every \(q\in S\). This product bounds the upper
+relative density of the primes where \(t\) is infeasible. The sum of
+the reciprocals of the primes \(q\equiv b\bmod t\) diverges, so the
+finite products can be made arbitrarily small.
+\end{proof}
+
+\section{Distribution of the first feasible offset}
+
+\begin{proof}[Proof of Theorem~\ref{thm:law}]
+Fix an integer \(B\ge3\). Proposition~\ref{prop:fixed} shows that on
+a set of primes of density one, feasibility agrees with
+\(\chi_t(p)=-1\) simultaneously for all \(t\le B\) with
+\(t>0\) and \(t\equiv3\bmod4\). Indeed, only finitely many offsets
+occur, and for each one there are only finitely many residue classes.
+We may also discard the finitely many primes dividing any such \(t\)
+or satisfying \(p^2\le B\).
+
+Let \(Q(B)\) be the set of prime factors occurring in these offsets.
+Then
+\[
+  Q(B)=\{q\le B:q\equiv3\pmod4\}
+       \ \cup\ \{q\le B/3:q\equiv1\pmod4\},
+\]
+where \(q\) ranges over primes. A prime \(q\equiv3\bmod4\) first
+occurs at \(t=q\). If \(q\equiv1\bmod4\) divides an offset \(t\),
+then \(t/q\equiv3\bmod4\), so its first occurrence is at \(t=3q\).
+
+Now every \(\chi_t(p)\) up to \(B\) equals \(+1\) if and only if
+\(\jac{p}{q}=1\) for each \(q\in Q(B)\). One direction follows
+from multiplicativity of the Jacobi symbol in its denominator.
+For the other, take \(t=q\) whenever \(q\equiv3\bmod4\). For
+\(q\equiv1\bmod4\) in \(Q(B)\), take \(t=3q\) and use
+\(\jac{p}{3}=1\), already known from \(t=3\).
+
+Exactly half of the nonzero classes modulo each \(q\) are squares.
+The Chinese remainder theorem makes the choices for different \(q\)
+independent, and the prime number theorem for arithmetic progressions
+gives equal limiting frequency to all the resulting invertible
+classes. With \(m(B)=\#Q(B)\) we obtain
+\[
+  \delta(\{p:T(p)>B\})=2^{-m(B)}.
+\]
+This formula also holds for \(B=2\), with \(Q(2)\) empty.
+When \(B\) reaches \(u_j\), one new prime enters \(Q(B)\), so
+the tail density drops by \(2^{-(j-1)}-2^{-j}=2^{-j}\).
+At every other integer \(B\) it has no drop. Finally the upper
+density of \(T(p)=\infty\) is at most \(2^{-j}\) for every \(j\).
+\end{proof}
+
+\paragraph{Relation to earlier work.}
+Yamamoto used quadratic characters to exclude squares from his
+congruence covering \cite[Theorem~2]{yamamoto}.
+Elsholtz and Tao proved that odd squares admit no solutions of their
+Types~I and~II \cite[Proposition~1.6]{elsholtztao}.
+Lemma~\ref{lem:div} tests a prescribed smallest denominator across
+all solution types. Geometric weights already appear in
+Erd\H{o}s's distribution of the least quadratic nonresidue
+\cite[equation~(7)]{erdos}. Here the density-one converse in
+Proposition~\ref{prop:fixed} passes from the distribution of
+quadratic characters to the distribution of actual representations.
+
+\section{Arithmetic progressions with a prescribed first offset}
+
+For the prime atoms of Theorem~\ref{thm:law}, an explicit construction
+attains the first offset.
+
+\begin{theorem}\label{thm:construction}
+For every prime \(r\equiv3\bmod4\) there exists an invertible residue
+class such that every prime \(p>r\) in that class satisfies \(T(p)=r\).
+Consequently, for any integer \(H\ge1\) there are infinitely many
+soluble inputs \(p^2\) for which none of the first \(H\) integers
+above \(p^2/4\) can be the smallest denominator.
+\end{theorem}
+
+\begin{proof}
+Let \(L\) be the least common multiple of all positive
+\(t<r\) with \(t\equiv3\bmod4\), taking \(L=1\) if there are none.
+Since \(r\) is prime and coprime to \(2L\), the conditions
+\[
+  p\equiv1\pmod{2L},\qquad p\equiv-1\pmod r
+\]
+specify one invertible residue class modulo \(2Lr\).
+Dirichlet's theorem gives infinitely many primes in it. For \(p>r\)
+and every earlier offset \(t\), we have \(\chi_t(p)=1\), so
+Proposition~\ref{prop:fixed} excludes \(t\).
+At \(t=r\), set \(x=(p^2+r)/4\) and \(k=(p+1)/r\). Then \(rk=p+1\)
+gives the ordered representation
+\[
+  \frac4{p^2}=\frac1x+\frac1{pxk}+\frac1{p^2xk}.
+\]
+Hence \(T(p)=r\). Choosing a prime \(r\equiv3\bmod4\) with
+\(r>4H-1\) excludes all of the first \(H\) candidates.
+\end{proof}
+
+\begin{corollary}\label{cor:quant}
+There is an absolute constant \(c>0\) such that for infinitely many
+soluble \(n=p^2\), the least feasible first denominator \(x\) satisfies
+\[
+  x-\frac n4\ge c\log n .
+\]
+\end{corollary}
+
+\begin{proof}
+Let \(r\) run through the primes congruent to \(3\bmod4\), and choose
+the least prime \(p\) in the residue class modulo \(D=2Lr\) of
+Theorem~\ref{thm:construction}. Since \(p\) is odd and
+\(p\equiv-1\bmod r\), we have \(p\ge2r-1\). Linnik's theorem gives
+absolute constants \(C,A>0\) such that \(p\le CD^A\)
+\cite{heathbrown}. Now \(Lr\) divides \(\operatorname{lcm}(1,\ldots,r)\),
+whose logarithm is \(O(r)\) by Chebyshev's estimate. Thus
+\(\log n=2\log p=O(r)\), whereas Theorem~\ref{thm:construction}
+gives \(x-n/4=r/4\). The primes \(p\) obtained in this way are
+unbounded.
+\end{proof}
+
+\section{Examples and scope}
+
+\begin{example}
+Take \(r=11\), so \(L=21\). The prime \(p=43\) satisfies both
+\(p\equiv1\bmod42\) and \(p\equiv-1\bmod11\). For \(n=1849\)
+the first candidates \(463,464,465\) correspond to \(t=3,7,11\).
+The first two offsets fail because \(43\equiv1\) modulo both \(3\)
+and \(7\). The third gives \(k=4\) and
+\[
+  \frac4{1849}=\frac1{465}+\frac1{79980}+\frac1{3439140}.
+\]
+\end{example}
+
+\begin{example}
+Take \(p=29\) and \(t=19\), so \(x=215=5\cdot43\). Although
+\(\jac{29}{19}=-1\), this offset fails. Modulo \(19\), the element
+\(g=10\) has order \(18\), since \(g^9=-1\) and \(g^6=11\).
+We have \(29\equiv g\) and \(5\equiv43\equiv g^2\), so
+\(M=29^2\cdot5\cdot43\equiv g^6\). The target \(-M\) is \(g^{15}\).
+Every divisor of \(M^2\) is congruent to \(g^{i+2j}\) for some
+\(0\le i,j\le4\). These exponents are at most \(12\), and none is
+\(15\bmod18\). Lemma~\ref{lem:div} excludes the offset. This gives
+an exception to pointwise sufficiency in Proposition~\ref{prop:fixed}.
+\end{example}
+
+The results sample inputs \(n=p^2\). A proof of the \ES{} conjecture
+for all prime inputs would imply it for all integers \(n\ge2\) by
+scaling the denominators \cite{elsholtztao}. Our analysis uses that
+\(-t\) is a square modulo odd primes dividing \((p^2+t)/4\).
+For prime inputs, Dahan studies search depth and gives an obstruction
+at the fixed offset \(7\) \cite{dahan}. The general conjecture remains
+open.
+
+\paragraph{Manuscript status and use of AI.}
+OpenAI Codex proposed the problem, developed the statements and proofs,
+searched for related literature, drafted the manuscript and wrote the
+code for the finite numerical checks.
+This version has not undergone
+independent peer review. The literature comparison above identifies
+related results. Priority for the distribution theorem has not been
+established.
+
+\begin{thebibliography}{9}
+
+\bibitem{yamamoto}
+K.~Yamamoto,
+On the Diophantine equation \(4/n=1/x+1/y+1/z\),
+\textit{Memoirs of the Faculty of Science, Kyushu University,
+Series~A} \textbf{19} (1965), 37--47.
+\href{https://doi.org/10.2206/kyushumfs.19.37}{doi:10.2206/kyushumfs.19.37}.
+
+\bibitem{elsholtztao}
+C.~Elsholtz and T.~Tao,
+Counting the number of solutions to the \ES{} equation on unit fractions,
+\textit{Journal of the Australian Mathematical Society}
+\textbf{94} (2013), 50--105.
+\href{https://doi.org/10.1017/S1446788712000468}{doi:10.1017/S1446788712000468}.
+
+\bibitem{erdos}
+P.~Erd\H{o}s,
+Sz\'amelm\'eleti megjegyz\'esek, I,
+\textit{Matematikai Lapok} \textbf{12} (1961), 10--17.
+\href{https://www.renyi.hu/~p_erdos/1961-23.pdf}{Original paper}.
+
+\bibitem{heathbrown}
+D.~R. Heath-Brown,
+Zero-free regions for Dirichlet \(L\)-functions, and the least prime
+in an arithmetic progression,
+\textit{Proceedings of the London Mathematical Society} (3)
+\textbf{64} (1992), 265--338.
+\href{https://doi.org/10.1112/plms/s3-64.2.265}{doi:10.1112/plms/s3-64.2.265}.
+
+\bibitem{dahan}
+B.~Dahan,
+Sieve dimension and search depth for the \ES{} conjecture,
+\(n\equiv1\pmod{24}\), preprint, version~2 (2026).
+\href{https://arxiv.org/abs/2608.24035v2}{arXiv:2608.24035v2}.
+
+\end{thebibliography}
+\end{document}
