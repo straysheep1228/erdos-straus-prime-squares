@@ -2,7 +2,6 @@
 
 **Qichao Liu** · Research note · 26 November 2026
 
-[English paper (PDF)](paper/manuscript.pdf) · [LaTeX source](paper/manuscript.tex) · [中文论文 (PDF)](paper/manuscript-zh.pdf) · [中文可编辑稿 (Word)](paper/manuscript-zh.docx)
 
 For an odd prime $p$, how far above $p^2/4$ must one look to find the first denominator in a three-term unit-fraction decomposition of $4/p^2$? The note studies the offset $T(p)=4x-p^2$, where $x$ is the least first denominator among all ordered decompositions. Set $T(p)=\infty$ if there is no decomposition.
 
@@ -43,4 +42,4 @@ Comments on the density-one implication in Proposition 3 and references to earli
 
 ## 中文简介
 
-对每个奇素数 $p$，从 $p^2/4$ 右边开始，寻找能使 $4/p^2$ 分解成三个单位分数的第一个分母 $x$。本文给出偏移 $4x-p^2$ 在奇素数中的极限分布，也构造出首个偏移恰为指定素数的无穷多个例子。中文稿保留全部证明、算例和数值表。此稿由 AI 参与推导与写作，公开征求同行审阅。
+对每个奇素数 $p$，从 $p^2/4$ 右边开始，寻找能使 $4/p^2$ 分解成三个单位分数的第一个分母 $x$。本文给出偏移 $4x-p^2$ 在奇素数中的极限分布，也构造出首个偏移恰为指定素数的无穷多个例子。由 AI 参与推导与写作。
