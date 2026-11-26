@@ -25,7 +25,7 @@ The script applies the divisor criterion in Lemma 2 to all 1,217 primes in $41\l
 
 The limiting densities are derived in Sections 2 and 3 of the paper.
 
-## Build the English paper
+## Build paper
 
 The bibliography is included in the TeX source. The following commands build the PDF with Tectonic.
 
